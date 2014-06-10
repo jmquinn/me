@@ -43,7 +43,7 @@ class me {
         shell       => '/bin/zsh',
         require     => Package['zsh'],
     }
-            
+
     file { '/home/jq/.zsh':
         ensure      => directory,
         owner       => 'jq',
