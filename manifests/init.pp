@@ -66,7 +66,7 @@ class me {
         ensure      => 'present',
         owner       => 'jq',
         group       => 'jq',
-        content     => file('puppet:///modules/me/gitstatus.py'),
+        source     => file('puppet:///modules/me/gitstatus.py'),
         require     => File['/home/jq/.zsh/git-prompt'],
     }
 
@@ -74,20 +74,20 @@ class me {
         ensure      => 'present',
         owner       => 'jq',
         group       => 'jq',
-        content     => file('puppet:///modules/me/zshrc.sh'),
+        source     => file('puppet:///modules/me/zshrc.sh'),
         require     => File['/home/jq/.zsh/git-prompt'],
     }
     file { '/home/jq/.zprofile':
         ensure      => 'present',
         owner       => 'jq',
         group       => 'jq',
-        content     => file('puppet:///modules/me/.zprofile'),
+        source     => file('puppet:///modules/me/.zprofile'),
     }
     file { '/home/jq/.zshrc':
         ensure      => 'present',
         owner       => 'jq',
         group       => 'jq',
-        content     => file('puppet:///modules/me/.zshrc'),
+        source     => file('puppet:///modules/me/.zshrc'),
         require     => User['jq'],
     }
 
@@ -116,7 +116,7 @@ class me {
         owner       => 'jq',
         group       => 'jq',
         mode        => '0600',
-        content     => file('/tmp/puppet/files/keys/jq'),
+        source     => file('/tmp/puppet/files/keys/jq'),
         require     => User['jq'],
     }
 }
