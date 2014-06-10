@@ -116,7 +116,7 @@ class me {
         owner       => 'jq',
         group       => 'jq',
         mode        => '0600',
-        source     => 'pupet:///modules/me/jq',
+        source     => 'puppet:///modules/me/jq',
         require     => User['jq'],
     }
 }
