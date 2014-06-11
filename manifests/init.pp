@@ -52,7 +52,7 @@ class me {
       package { $package: ensure => $ensure }
     }
 
- #   package { 'zsh': }
+    package { 'zsh': }
 
     file { '/home/jq/.zsh':
         ensure      => directory,
