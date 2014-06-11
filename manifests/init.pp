@@ -1,6 +1,6 @@
 # == Class: me
 #
-# Full description of class me here.
+# Adds the a user 'jq' to a server
 #
 # === Parameters
 #
@@ -46,7 +46,13 @@ class me {
 
     #ZSH config
 
-    package { 'zsh': }
+    if defined( Package[$package]) {
+      debug("$package already installed")
+    } else {
+      package { $package: ensure => $ensure }
+    }
+
+ #   package { 'zsh': }
 
     file { '/home/jq/.zsh':
         ensure      => directory,
