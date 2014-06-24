@@ -49,7 +49,7 @@ class me {
     if defined( Package['zsh']) {
       debug("zsh already installed")
     } else {
-      package { 'zsh': ensure => true }
+      package { 'zsh': ensure => 'present' }
     }
 
 #    package { 'zsh': }
