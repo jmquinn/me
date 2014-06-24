@@ -46,13 +46,13 @@ class me {
 
     #ZSH config
 
-    if defined( Package[$package]) {
-      debug("$package already installed")
+    if defined( Package['zsh']) {
+      debug("zsh already installed")
     } else {
-      package { $package: ensure => $ensure }
+      package { 'zsh': ensure => true }
     }
 
-    package { 'zsh': }
+#    package { 'zsh': }
 
     file { '/home/jq/.zsh':
         ensure      => directory,
